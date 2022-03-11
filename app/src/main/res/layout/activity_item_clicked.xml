@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/img_activity_item_clicked_animeimage"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_activity_item_clicked_animename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:text="anime name"
+        android:textColor="@color/black"
+        android:textSize="19dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_activity_item_clicked_animeimage" />
+
+    <RatingBar
+        android:id="@+id/rating_activity_item_clicked"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="20dp"
+        android:progressTint="@color/yellow"
+        android:rating="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_activity_item_clicked_genres" />
+
+    <TextView
+        android:id="@+id/tv_activity_item_clicked_numofrating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="(96 ratings)"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@+id/rating_activity_item_clicked"
+        app:layout_constraintStart_toStartOf="@+id/rating_activity_item_clicked"
+        app:layout_constraintTop_toBottomOf="@+id/rating_activity_item_clicked" />
+
+    <TextView
+        android:id="@+id/tv_activity_item_clicked_genres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Action , Supernatural"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_activity_item_clicked_animename"
+        app:layout_constraintTop_toBottomOf="@+id/tv_activity_item_clicked_animename" />
+
+    <TextView
+        android:id="@+id/tv_activity_item_clicked_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Currently Airing"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_activity_item_clicked_genres"
+        app:layout_constraintTop_toBottomOf="@+id/tv_activity_item_clicked_genres" />
+
+    <TextView
+        android:id="@+id/tv_activity_item_clicked_premiered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Winter 2022"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_activity_item_clicked_status"
+        app:layout_constraintTop_toBottomOf="@+id/tv_activity_item_clicked_status" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
