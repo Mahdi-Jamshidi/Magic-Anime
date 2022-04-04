@@ -8,9 +8,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import ir.magiccodes.magicanimeapp.room.Anime
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 
 class AnimeAdapter(private val data: ArrayList<Anime>, private val animeEvent: AnimeEvent ) :
@@ -97,7 +97,7 @@ class AnimeAdapter(private val data: ArrayList<Anime>, private val animeEvent: A
 
     interface AnimeEvent{
 
-        fun onAnimeclicked(anime:Anime)
-        fun onAnimeLongclicked(anime:Anime , pos:Int)
+        fun onAnimeclicked(anime: Anime)
+        fun onAnimeLongclicked(anime: Anime, pos:Int)
     }
 }

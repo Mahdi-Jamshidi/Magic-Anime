@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import ir.magiccodes.magicanimeapp.databinding.ActivityItemClickedBinding
+import ir.magiccodes.magicanimeapp.room.Anime
 
 class ItemClickedActivity() : AppCompatActivity() {
     lateinit var binding: ActivityItemClickedBinding

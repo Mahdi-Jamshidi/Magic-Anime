@@ -9,6 +9,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ir.magiccodes.magicanimeapp.databinding.*
+import ir.magiccodes.magicanimeapp.room.Anime
 
 const val KEY_SEND_DATA = "data"
 
@@ -22,124 +23,124 @@ class MainActivity() : AppCompatActivity(), AnimeAdapter.AnimeEvent {
 
         val animeList = arrayListOf(
             Anime(
-                "https://s6.uupload.ir/files/takt_op._destiny_6z3b.jpg",
-                "https://s6.uupload.ir/files/11_n56v.jpg",
-                "Takt Op. Destiny",
-                "fantasy, adventure, music",
-                "Finished Airing",
-                "Fall 2021",
-                491,
-                3.6f
+                urlImage = "https://s6.uupload.ir/files/takt_op._destiny_6z3b.jpg",
+                urlImageTitle = "https://s6.uupload.ir/files/11_n56v.jpg",
+                txtName = "Takt Op. Destiny",
+                txtGenres = "fantasy, adventure, music",
+                txtStatus = "Finished Airing",
+                txtPremiered = "Fall 2021",
+                numOfRating = 491,
+                Rating = 3.6f
             ),
             Anime(
-                "https://s6.uupload.ir/files/anime_deep_aeaf.png",
-                "https://s6.uupload.ir/files/2_bm1k.png",
-                "Deep Insanity: The Lost Child",
-                "action, Sci-Fi",
-                "Finished Airing",
-                "winer 2021",
-                216,
-                2.8f
+                urlImage="https://s6.uupload.ir/files/anime_deep_aeaf.png",
+                urlImageTitle="https://s6.uupload.ir/files/2_bm1k.png",
+                txtName="Deep Insanity: The Lost Child",
+                txtGenres ="action, Sci-Fi",
+                txtStatus ="Finished Airing",
+                txtPremiered ="winer 2021",
+                numOfRating = 216,
+                Rating =2.8f
             ),
             Anime(
-                "https://s6.uupload.ir/files/image_test_caz4.jpg",
-                "https://s6.uupload.ir/files/3_7sft.png",
-                "Kimetsu no Yaiba: Yuukaku-hen",
-                "Action, Supernatural",
-                "Currently Airing",
-                "winer 2022",
-                314,
-                4.3f
+                urlImage="https://s6.uupload.ir/files/image_test_caz4.jpg",
+                urlImageTitle="https://s6.uupload.ir/files/3_7sft.png",
+                txtName="Kimetsu no Yaiba: Yuukaku-hen",
+                txtGenres ="Action, Supernatural",
+                txtStatus ="Currently Airing",
+                txtPremiered ="winer 2022",
+                numOfRating =314,
+                Rating =4.3f
             ),
             Anime(
-                "https://s6.uupload.ir/files/10_yvkn.jpg",
-                "https://s6.uupload.ir/files/100_9msi.jpg",
-                "One Piece",
-                "Action, Adventure, Fantasy",
-                "Currently Airing",
-                "Winter 1999",
-                965,
-                4.3f
+                urlImage="https://s6.uupload.ir/files/10_yvkn.jpg",
+                urlImageTitle="https://s6.uupload.ir/files/100_9msi.jpg",
+                txtName="One Piece",
+                txtGenres ="Action, Adventure, Fantasy",
+                txtStatus ="Currently Airing",
+                txtPremiered ="Winter 1999",
+                numOfRating =965,
+                Rating =4.3f
             ),
             Anime(
-                "https://s6.uupload.ir/files/my-hero-academia-characters-mosaic-i63330_qnzb.jpg",
-                "https://s6.uupload.ir/files/4_2177.jpg",
-                "Boku no Hero Academia",
-                "Action, Comedy",
-                "Finished Airing",
-                "Spring 2016",
-                600,
-                4f
+                urlImage="https://s6.uupload.ir/files/my-hero-academia-characters-mosaic-i63330_qnzb.jpg",
+                urlImageTitle="https://s6.uupload.ir/files/4_2177.jpg",
+                txtName="Boku no Hero Academia",
+                txtGenres ="Action, Comedy",
+                txtStatus ="Finished Airing",
+                txtPremiered ="Spring 2016",
+                numOfRating =600,
+                Rating =4f
             ),
             Anime(
-                "https://s6.uupload.ir/files/hunter_nae5.jpg",
-                "https://s6.uupload.ir/files/5_qazk.jpg",
-                "Hunter x Hunter",
-                "Adventure, Fantasy",
-                "Finished Airing",
-                "Fall 2011",
-                760,
-                4.6f
+                urlImage="https://s6.uupload.ir/files/hunter_nae5.jpg",
+                urlImageTitle="https://s6.uupload.ir/files/5_qazk.jpg",
+                txtName="Hunter x Hunter",
+                txtGenres ="Adventure, Fantasy",
+                txtStatus ="Finished Airing",
+                txtPremiered ="Fall 2011",
+                numOfRating =760,
+                Rating =4.6f
             ),
             Anime(
-                "https://s6.uupload.ir/files/96541_6sdn.jpg",
-                "https://s6.uupload.ir/files/6_jl7t.jpeg",
-                "Fullmetal Alchemist: Brotherhood",
-                "Comedy, Drama, Action",
-                "Finished Airing",
-                "Spring 2009",
-                540,
-                4.7f
+                urlImage="https://s6.uupload.ir/files/96541_6sdn.jpg",
+                urlImageTitle="https://s6.uupload.ir/files/6_jl7t.jpeg",
+                txtName="Fullmetal Alchemist: Brotherhood",
+                txtGenres ="Comedy, Drama, Action",
+                txtStatus ="Finished Airing",
+                txtPremiered ="Spring 2009",
+                numOfRating =540,
+                Rating =4.7f
             ),
             Anime(
-                "https://s6.uupload.ir/files/75195_eh0t.jpg",
-                "https://s6.uupload.ir/files/7_d6ke.png",
-                "Ao no Exorcist",
-                "Fantasy, Supernatural",
-                "Finished Airing",
-                "Spring 2011",
-                322,
-                3.7f
+                urlImage="https://s6.uupload.ir/files/75195_eh0t.jpg",
+                urlImageTitle="https://s6.uupload.ir/files/7_d6ke.png",
+                txtName="Ao no Exorcist",
+                txtGenres ="Fantasy, Supernatural",
+                txtStatus ="Finished Airing",
+                txtPremiered ="Spring 2011",
+                numOfRating =322,
+                Rating =3.7f
             ),
             Anime(
-                "https://s6.uupload.ir/files/73474_ytao.jpg",
-                "https://s6.uupload.ir/files/8_50v2.jpeg",
-                "Owari no Seraph",
-                "Action, Drama, Supernatural",
-                "Finished Airing",
-                "Spring 2015",
-                662,
-                3.9f
+                urlImage="https://s6.uupload.ir/files/73474_ytao.jpg",
+                urlImageTitle="https://s6.uupload.ir/files/8_50v2.jpeg",
+                txtName="Owari no Seraph",
+                txtGenres ="Action, Drama, Supernatural",
+                txtStatus ="Finished Airing",
+                txtPremiered ="Spring 2015",
+                numOfRating =662,
+                Rating =3.9f
             ),
             Anime(
-                "https://s6.uupload.ir/files/1_73ph.jpg",
-                "https://s6.uupload.ir/files/9_lxt4.jpg",
-                "Guilty Crown",
-                "Romance, Sci-Fi",
-                "Finished Airing",
-                "Fall 2011",
-                825,
-                3.5f
+                urlImage="https://s6.uupload.ir/files/1_73ph.jpg",
+                urlImageTitle="https://s6.uupload.ir/files/9_lxt4.jpg",
+                txtName="Guilty Crown",
+                txtGenres ="Romance, Sci-Fi",
+                txtStatus ="Finished Airing",
+                txtPremiered ="Fall 2011",
+                numOfRating =825,
+                Rating =3.5f
             ),
             Anime(
-                "https://s6.uupload.ir/files/3_n89n.jpg",
-                "https://s6.uupload.ir/files/011_nnb9.jpg",
-                "Sword Art Online",
-                "Fantasy, action",
-                "Finished Airing",
-                "Summer 2012",
-                927,
-                3.8f
+                urlImage="https://s6.uupload.ir/files/3_n89n.jpg",
+                urlImageTitle="https://s6.uupload.ir/files/011_nnb9.jpg",
+                txtName="Sword Art Online",
+                txtGenres ="Fantasy, action",
+                txtStatus ="Finished Airing",
+                txtPremiered ="Summer 2012",
+                numOfRating =927,
+                Rating =3.8f
             ),
             Anime(
-                "https://s6.uupload.ir/files/4_9xu9.jpg",
-                "https://s6.uupload.ir/files/012_qghe.jpg",
-                "Tate no Yuusha no Nariagari",
-                "Action, Adventure, Drama,",
-                "Finished Airing",
-                "Winter 2019",
-                541,
-                4.1f
+                urlImage="https://s6.uupload.ir/files/4_9xu9.jpg",
+                urlImageTitle="https://s6.uupload.ir/files/012_qghe.jpg",
+                txtName="Tate no Yuusha no Nariagari",
+                txtGenres ="Action, Adventure, Drama,",
+                txtStatus ="Finished Airing",
+                txtPremiered ="Winter 2019",
+                numOfRating =541,
+                Rating =4.1f
             )
         )
 
@@ -153,7 +154,7 @@ class MainActivity() : AppCompatActivity(), AnimeAdapter.AnimeEvent {
     }
 
 
-    fun AddNewItem(animeList: ArrayList<Anime>){
+    fun AddNewItem(animeList: ArrayList<Anime>) {
         binding.btnAddNewAnime.setOnClickListener {
 
             val dialog = AlertDialog.Builder(this).create()
@@ -181,14 +182,14 @@ class MainActivity() : AppCompatActivity(), AnimeAdapter.AnimeEvent {
                     val urlPic = animeList[randonForUrl].urlImage
                     val urlPicTtle = animeList[randonForUrl].urlImageTitle
                     val newAnime = Anime(
-                        urlPic,
-                        urlPicTtle,
-                        txtname,
-                        txtgenres,
-                        txtstatus,
-                        txtpremiered,
-                        ratingbarstar,
-                        txtnumOfRating
+                        urlImage= urlPic,
+                        urlImageTitle= urlPicTtle,
+                        txtName= txtname,
+                        txtGenres = txtgenres,
+                        txtStatus = txtstatus,
+                        txtPremiered = txtpremiered,
+                        numOfRating = ratingbarstar,
+                        Rating = txtnumOfRating
                     )
                     myAdapter.addAnime(newAnime)
 
@@ -202,7 +203,7 @@ class MainActivity() : AppCompatActivity(), AnimeAdapter.AnimeEvent {
         }
     }
 
-    fun Search(animeList: ArrayList<Anime>){
+    fun Search(animeList: ArrayList<Anime>) {
         binding.edtSearch.addTextChangedListener { editTextInput ->
 
             if (editTextInput!!.isNotEmpty()) {
@@ -286,14 +287,14 @@ class MainActivity() : AppCompatActivity(), AnimeAdapter.AnimeEvent {
 
                     // creat new anime to add to recycler view
                     val newAnime = Anime(
-                        anime.urlImage,
-                        anime.urlImageTitle,
-                        txtname,
-                        txtgenres,
-                        txtstatus,
-                        txtpremiered,
-                        anime.numOfRating,
-                        anime.Rating
+                        urlImage= anime.urlImage,
+                        urlImageTitle= anime.urlImageTitle,
+                        txtName= txtname,
+                        txtGenres = txtgenres,
+                        txtStatus = txtstatus,
+                        txtPremiered = txtpremiered,
+                        numOfRating = anime.numOfRating,
+                        Rating = anime.Rating
                     )
 
                     //update item
@@ -308,4 +309,11 @@ class MainActivity() : AppCompatActivity(), AnimeAdapter.AnimeEvent {
     }
 
 }
+
+
+
+
+
+
+
 
