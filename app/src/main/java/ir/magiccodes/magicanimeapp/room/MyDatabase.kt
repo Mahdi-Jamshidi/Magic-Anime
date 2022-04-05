@@ -11,17 +11,18 @@ abstract class MyDatabase : RoomDatabase() {
 
     companion object{
 
-        private val dataBase: MyDatabase? = null
+        private var dataBase: MyDatabase? = null
         fun getDatabase(context: Context) :MyDatabase{
-            var instance = dataBase
-            if (instance == null){
-                instance = Room.databaseBuilder(
+            if (dataBase == null){
+                dataBase = Room.databaseBuilder(
                     context.applicationContext,
                     MyDatabase::class.java,
                     "myDatabase.db"
-                ).build()
+                )
+                    .allowMainThreadQueries()
+                    .build()
             }
-            return instance
+            return dataBase!!
         }
     }
 }
