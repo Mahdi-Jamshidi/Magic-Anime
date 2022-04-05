@@ -8,6 +8,9 @@ interface AnimeDao {
     @Insert
     fun insertAnime(anime: Anime)
 
+    @Insert
+    fun insertAllAnimes(data: List<Anime>)
+
     @Update
     fun updateAnime(anime: Anime)
 
@@ -18,8 +21,8 @@ interface AnimeDao {
     fun deleteAllAnimes()
 
     @Query(" SELECT * FROM table_anime")
-    fun getAllAnimes() : List<Anime>
+    fun getAllAnimes(): List<Anime>
 
     @Query("SELECT * FROM table_anime WHERE txtName LIKE '%'|| :searching || '%'")
-    fun searchAnimes(searching : String) : List<Anime>
+    fun searchAnimes(searching: String): List<Anime>
 }

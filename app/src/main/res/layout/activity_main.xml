@@ -38,6 +38,15 @@
                 app:srcCompat="@drawable/ic_add"
                 app:tint="@color/white" />
 
+            <ImageView
+                android:id="@+id/btn_remove_all_anime"
+                android:layout_marginEnd="42dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="end|center_vertical"
+                app:srcCompat="@drawable/ic_clear_all"
+                app:tint="@color/white" />
+
         </FrameLayout>
 
         <EditText
